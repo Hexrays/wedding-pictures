@@ -1,0 +1,7 @@
+{
+  "generator-react-webpack": {
+    "appName": "weddingPictures",
+    "style": "sass",
+    "postcss": true
+  }
+}
