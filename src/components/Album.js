@@ -9,9 +9,9 @@ const Album = ({
   <li className="album">
       <Link to={`album/${id}`} >
           <h4>{title}</h4>
+        <p>Count: {count}</p>
+        <img src={`${folder}/001.jpg`} />
       </Link>
-      <p>Count: {count}</p>
-      <img src={`${folder}/001.jpg`} />
   </li>
 );
 

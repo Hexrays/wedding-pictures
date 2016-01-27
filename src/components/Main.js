@@ -11,7 +11,7 @@ class AppComponent extends React.Component {
     return (
       <div className="index">
         <Header />
-        {this.props.children}
+          {this.props.children}
         <Footer />
       </div>
     );
