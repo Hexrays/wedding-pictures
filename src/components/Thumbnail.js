@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Image from './Image';
+
 // const Thumbnail = ({
 //     thumb
 // }) => (
@@ -14,11 +16,11 @@ class Thumbnail extends React.Component {
 
   render() {
     const {thumb} = this.props;
-    let img = new Image();
-    img.src = thumb;
-    const imgHeight = 200;
-    const ratio = img.width/img.height;
-    let imgWidth = imgHeight * ratio;
+    // let img       = new Image();
+    // img.src         = thumb;
+    // const imgHeight = 200;
+    // const ratio     = img.width/img.height;
+    // let imgWidth    = imgHeight * ratio;
 
     // console.log();
 
@@ -32,7 +34,8 @@ class Thumbnail extends React.Component {
           // backgroundSize: 'cover',
           border: '1px solid black'
       }} >
-        <img style={{verticalAlign:'middle'}} src={thumb} height={imgHeight} width={imgWidth} />
+        <Image style={{verticalAlign:'middle'}}
+          src={thumb}  />
 
       </div>
     );

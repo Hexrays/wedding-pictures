@@ -3,7 +3,6 @@ import React from 'react';
 import {albumData} from '../constants/constants';
 import ThumbnailContainer from './ThumbnailContainer';
 import {Link} from 'react-router';
-import {Preload} from 'react-preload';
 
 class AlbumView extends React.Component {
   constructor(props) {
@@ -13,6 +12,7 @@ class AlbumView extends React.Component {
 
   componentWillMount() {
     const {count, thumbs, folder} = this.state;
+    let images = [];
     if(!thumbs.length) {
       for (let i = 1; i < count; i++) {
         let fileNum;
@@ -24,40 +24,24 @@ class AlbumView extends React.Component {
           fileNum = i;
         }
         let url = `${folder}/${fileNum}.jpg`;
-        thumbs.push(url);
+        images.push(url);
       }
+      this.setState({
+        thumbs: images
+      });
     }
-  }
-
-  _handleImageLoadError() {
-    console.log('err');
-  }
-
-  _handleImageLoadSuccess() {
-    console.log('success');
   }
 
   render() {
     const {title, count, thumbs} = this.state;
-    const loadingIndicator = (<div>Loading...</div>)
-    // let images = [];
+    // throttle and test. I don't think they're being preloaded...
 
     return (
       <div  >
         <Link to='/'>Back</Link>
         <h3>{title}</h3>
         <p>Count: {count}</p>
-        <Preload
-          loadingIndicator={loadingIndicator}
-          images={thumbs}
-          autoResolveDelay={3000}
-          onError={this._handleImageLoadError}
-          onSuccess={this._handleImageLoadSuccess}
-          resolveOnError={true}
-          mountChildren={true}
-          >
-          <ThumbnailContainer thumbs={thumbs} />
-        </Preload>
+        <ThumbnailContainer thumbs={thumbs} />
       </div>
     );
   }
