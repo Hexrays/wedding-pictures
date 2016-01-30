@@ -23,13 +23,7 @@ class Image extends React.Component{
       width  : imgWidth,
       loaded : true
     });
-let dat = {
-  src: x.src,
-  width: x.width,
-  height:x.height
-}
 
-console.log(dat);
   }
 
   componentDidMount () {

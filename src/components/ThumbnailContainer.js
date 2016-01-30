@@ -6,7 +6,7 @@ const ThumbnailContainer =({
 }) => (
   <ul>
     {thumbs.map((thumb, i) =>
-      <Thumbnail thumb={thumb} key={i} />
+      <Thumbnail {...thumb} key={i} />
     )}
   </ul>
 );
