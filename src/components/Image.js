@@ -10,20 +10,10 @@ class Image extends React.Component{
     });
   }
 
-  onImageLoad (x) {
-    // if (this.isMounted()) {
-      // this.setState({ loaded: true });
-    // }
-    // console.log(this,x);
-    const imgHeight = 200;
-    const ratio     = x.width/x.height;
-    let imgWidth    = imgHeight * ratio;
+  onImageLoad () {
     this.setState({
-      height : imgHeight,
-      width  : imgWidth,
       loaded : true
     });
-
   }
 
   componentDidMount () {
@@ -32,21 +22,18 @@ class Image extends React.Component{
     // You may want to rename the component if the <Image> definition
     // overrides window.Image
     var img = new window.Image();
-    img.onload = () => {this.onImageLoad(img)};
+    img.onload = () => {this.onImageLoad()};
     img.src = imgSrc;
-    // const imgHeight = 200;
-    // const ratio     = img.width/img.height;
-    // let imgWidth    = imgHeight * ratio;
   }
 
   render () {
     var { className, ...props } = this.props;
-    var {height, width} = this.state;
+    // var {height, width} = this.state;
     var rootClassName = classNames(className, 'image', {
       'image-loaded': this.state.loaded
     });
     return (
-      <img ref="img" {...props} width={width} height={height} className={rootClassName} />
+      <img ref="img" {...props} className={rootClassName} />
     );
   }
 }

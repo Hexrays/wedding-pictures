@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import Image from './Image';
+import Image from './Image';
 
 
 // const Thumbnail = ({
@@ -12,33 +12,27 @@ import React from 'react';
 class Thumbnail extends React.Component {
   componentWillMount() {
 
-    // console.log(thumb);
   }
 
   render() {
-    const {src, width, height} = this.props;
+    const {width, height} = this.props;
     // let img       = new Image();
     // img.src         = thumb;
     const maxImgHeight = 200;
     const ratio     = width/height;
     let imgWidth    = maxImgHeight * ratio;
 
-    // console.log();
-
     return (
       <div style={{
-          height:`${maxImgHeight}px`,
-          width: `${imgWidth}px`,
-          float: 'left',
-          margin: '5px',
-          // backgroundImage: `url(${thumb})`,
-          // backgroundSize: 'cover',
-          border: '1px solid black'
+          height          : `${maxImgHeight}px`,
+          width           : `${imgWidth}px`,
+          float           : 'left',
+          margin          : '5px',
+          border          : '1px solid black',
+          backgroundColor : '#aaa'
       }} >
-        <Image style={{verticalAlign:'middle'}}
-          src={src}
-          height={height}
-          width={width} />
+        <Image style={{verticalAlign:'middle'}} src={this.props.src}
+          {...this.props} />
 
       </div>
     );
@@ -46,3 +40,9 @@ class Thumbnail extends React.Component {
 }
 
 export default Thumbnail;
+
+
+// <Image style={{verticalAlign:'middle'}}
+//           src={src}
+//           height={height}
+//           width={width} />
