@@ -3,24 +3,6 @@
 import React from 'react';
 import Thumbnail from './Thumbnail';
 
-// class Thumbnail extends React.Component {
-//     render() {
-//         return (
-//             <li>
-
-//             </li>
-//         );
-//     }
-// }
-
-// class Thumbnails extends React.Component {
-//   render() {
-//     return (
-
-//     )
-//   }
-// }
-
 const Thumbnails = ({
     sections
 }) => (

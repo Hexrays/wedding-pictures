@@ -4,7 +4,7 @@ import Thumbnail from './Thumbnail';
 const ThumbnailContainer =({
   thumbs
 }) => (
-  <ul>
+  <ul className="clearfix">
     {thumbs.map((thumb, i) =>
       <Thumbnail {...thumb} key={i} />
     )}

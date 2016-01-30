@@ -8,7 +8,6 @@ class AlbumView extends React.Component {
 
   render() {
     const {title, count, thumbs} = albumData[this.props.params.albumId];
-    // throttle and test. I don't think they're being preloaded...
     return (
       <div  >
         <Link to='/'>Back</Link>
