@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-      // <Link to={`album/${id}`} >
-
 const Album = ({
     id, title, count, folder
 }) => (
