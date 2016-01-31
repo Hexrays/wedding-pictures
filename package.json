@@ -71,8 +71,9 @@
     "core-js": "^2.0.0",
     "history": "^1.17.0",
     "normalize.css": "^3.0.3",
-    "react": "^0.14.0",
+    "react": "^0.14.7",
     "react-dom": "^0.14.0",
+    "react-photo-gallery": "^3.0.3",
     "react-preload": "^0.2.3",
     "react-router": "^1.0.3"
   }
