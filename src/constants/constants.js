@@ -73,7 +73,7 @@ export const albumData = [
         ]
     },{
         id: 1,
-        title: 'Pre Ceremony',
+        title: 'Pre-Ceremony Portraits',
         count: 35,
         folder: 'images/02',
         photos: [
