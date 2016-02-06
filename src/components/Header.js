@@ -5,8 +5,8 @@ import React from 'react';
 class Header extends React.Component {
   render() {
     return (
-      <header>
-        <h1>Wedding Pictures</h1>
+      <header className={this.props.tag}>
+        {this.props.children}
       </header>
     );
   }

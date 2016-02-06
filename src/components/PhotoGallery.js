@@ -1,9 +1,11 @@
+require('styles/gallery.scss');
+
 import React from 'react';
 import {albumData} from '../constants/constants';
 import Gallery from 'react-photo-gallery';
 import {Link} from 'react-router';
 
-class AlbumView extends React.Component {
+class PhotoGallery extends React.Component {
 
   render() {
     const {title, count, photos} = albumData[this.props.params.albumId];
@@ -12,11 +14,14 @@ class AlbumView extends React.Component {
         <Link to='/'>Back</Link>
         <h3>{title}</h3>
         <p>Count: {count}</p>
-        <Gallery photos={photos} />
+        <section className="gallery">
+          <Gallery className="gallery" photos={photos} />
+        </section>
+
       </div>
     );
   }
 }
 
 
-export default AlbumView;
+export default PhotoGallery;
