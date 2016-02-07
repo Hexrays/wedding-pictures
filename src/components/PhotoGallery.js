@@ -1,6 +1,7 @@
 require('styles/gallery.scss');
 
 import React from 'react';
+import {find} from 'lodash';
 import Gallery from 'react-photo-gallery';
 import {Link} from 'react-router';
 import Header from './Header';
@@ -11,8 +12,10 @@ import {albumData} from '../constants/constants';
 class PhotoGallery extends React.Component {
 
   render() {
-    const {title, count, photos, id} = albumData[this.props.params.albumId];
-    let nextAlbum = id === (albumData.length - 1) ? 0 : id + 1;
+    // const {title, count, photos, number} = albumData[this.props.params.albumId];
+    const {title, count, photos, number} = find(albumData, (obj) => {return obj.id === this.props.params.albumId});
+    let nextAlbumNumber = number === (albumData.length) ? 0 : number + 1;
+    let nextAlbum = albumData[nextAlbumNumber];
 
     return (
       <div className="page" >
@@ -29,7 +32,7 @@ class PhotoGallery extends React.Component {
         </section>
         <Footer>
           <div className="gallery__footer-next clearfix">
-            <Link className="gallery__footer-link brandon" to={`/album/${nextAlbum}`} >next album: {albumData[nextAlbum].title} &#8611;</Link>
+            <Link className="gallery__footer-link brandon" to={`/album/${nextAlbum.id}`} >next album: {nextAlbum.title} &#8611;</Link>
           </div>
 
         </Footer>

@@ -1,6 +1,7 @@
 export const albumData = [
     {
-        id: 0,
+        id: 'getting-ready',
+        number: 1,
         title: 'Getting Ready',
         count: 66,
         folder: 'images/01',
@@ -73,7 +74,8 @@ export const albumData = [
           {src: 'images/01/065.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'images/01/065.jpg'}}
         ]
     },{
-        id: 1,
+        id: 'pre-ceremony-portraits',
+        number: 2,
         title: 'Pre-Ceremony Portraits',
         count: 35,
         folder: 'images/02',
@@ -115,7 +117,8 @@ export const albumData = [
           {src: '/images/02/034.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'/images/02/034.jpg'}}
         ]
     },{
-        id: 2,
+        id: 'ceremony',
+        number: 3,
         title: 'Ceremony',
         count: 92,
         folder: 'images/03',
@@ -214,7 +217,8 @@ export const albumData = [
           {src: 'images/03/091.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'images/03/091.jpg'}}
         ]
     },{
-        id: 3,
+        id: 'portraits',
+        number: 4,
         title: 'Portraits',
         count: 89,
         folder: 'images/04',
@@ -310,7 +314,8 @@ export const albumData = [
           {src: 'images/04/088.jpg', width: 800, height: 1200, aspectRatio:0.6667, lightboxImage:{src:'images/04/088.jpg'}}
         ]
     },{
-        id: 4,
+        id: 'reception',
+        number : 5,
         title: 'Reception',
         count: 82,
         folder: 'images/05',
