@@ -1,21 +1,22 @@
-$monospaceFont: 'andale_monoregular', Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
-$headerFont: "brandon-grotesque";
-$fontWeightBold: 700;
-$fontWeightBlack: 900;
-$monoFontSize: 12rem;
-$monoFontSizeSm: 8rem;
+$monospaceFont : 'andale_monoregular', Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+$headerFont    : "brandon-grotesque";
 
-$jkhover: 88, 76, 68;
-$gold: #a47c53;
-$creamBg: #FBF9F7;
-$orange:#FF6600;
-$footerRed: #EF4136;
+$fontWeightBold  : 700;
+$fontWeightBlack : 900;
+$monoFontSize    : 12rem;
+$monoFontSizeSm  : 8rem;
 
-$albumMargin: 2.66666666%;
+$jkhover   : 88, 76, 68;
+$gold      : #a47c53;
+$creamBg   : #FBF9F7;
+$orange    : #FF6600;
+$footerRed : #EF4136;
+
+$albumMargin : 2.66666666%;
 
 %max-width {
-  width: 98%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  width        : 98%;
+  max-width    : 1200px;
+  margin-left  : auto;
+  margin-right : auto;
 }

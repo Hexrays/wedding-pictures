@@ -2,47 +2,48 @@
 @import 'hex';
 
 footer {
-    margin-top: 20px;
+  margin-top : 20px;
 }
 
 .hex-footer {
   @include flex-center-parent;
-  width: 100%;
-  height: 120px;
-  background-color: #000;
-  color: #fff;
-  text-transform: uppercase;
+  width            : 100%;
+  height           : 120px;
+  text-transform   : uppercase;
+  color            : #fff;
+  background-color : #000;
 }
 
 .hex-message {
   @include flex-center-child;
-  font-size: 12rem;
-  letter-spacing: 2px;
+  letter-spacing : 2px;
+  font-size      : 12rem;
 }
 
 .hex-heart {
-  position: relative;
-  display: inline-block;
-  border: 0;
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  background: url('../images/heart.png') center center no-repeat;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
+  position       : relative;
+  display        : inline-block;
+  width          : 20px;
+  height         : 20px;
+  vertical-align : middle;
+  color          : transparent;
+  border         : 0;
+  background     : url('../images/heart.png') center center no-repeat;
+  text-shadow    : none;
+  font           : 0/0 a;
 }
 
 
 .gallery__footer-next {
-  background-color: $footerRed;
-  padding: 50px 0;
-  text-align: center;
+  padding          : 50px 0;
+  text-align       : center;
+  background-color : $footerRed;
 }
 
 
 .gallery__footer-link {
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: $fontWeightBold;
+  text-transform : uppercase;
+  color          : #fff;
+  font-size      : 28rem;
+  font-weight    : $fontWeightBold;
 }

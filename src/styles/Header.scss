@@ -2,94 +2,89 @@
 @import 'hex';
 
 header {
-  text-transform: uppercase;
+    text-transform : uppercase;
 
-  p {
-    display: inline-block;
-    font-size: 13rem;
-  }
-
-  a {
-    &:hover {
-      text-decoration: underline;
+    p {
+        display   : inline-block;
+        font-size : 13rem;
     }
-  }
-}
-
-.header__photo-cred {
-
+    a {
+        &:hover {
+            text-decoration : underline;
+        }
+    }
 }
 
 .album-page__header {
-  @include flex-center-parent;
-  position: relative;
-  width: 100%;
-  height: 275px;
-  background: $creamBg url('../images/header.jpg') center center no-repeat;
-  background-size: cover;
+    @include flex-center-parent;
+    position        : relative;
+    width           : 100%;
+    height          : 275px;
+    background      : $creamBg url('../images/header.jpg') center center no-repeat;
+    background-size : cover;
 }
 
 .album-page__header-copy {
-  @include flex-center-child;
-  padding: 15px 40px;
-  background-color: #fff;
-  border: 5px solid #000;
-  font-size: 16rem;
+    @include flex-center-child;
+    padding          : 15px 40px;
+    border           : 5px solid #000;
+    background-color : #fff;
+    font-size        : 16rem;
 }
 
 .album-page__title {
-  @extend %max-width;
-  position: relative;
-  margin-top: 25px;
-  margin-bottom: 10px;
+    @extend %max-width;
+    position      : relative;
+    margin-top    : 25px;
+    margin-bottom : 10px;
 }
 
 .album-page__name {
-  margin-left: $albumMargin;
-  font-size: 42rem;
-  display: inline-block;
-  line-height: 1;
-  width: 100px;
+    display     : inline-block;
+    width       : 100px;
+    margin-left : $albumMargin;
+    font-size   : 42rem;
+    line-height : 1;
 }
 
 .album-page__details {
-  position: absolute;
-  left: 110px ;
-  margin-left: $albumMargin;
-  right: 0;
-  bottom: 5px;
-  letter-spacing: 2px;
+    position       : absolute;
+    right          : 0;
+    bottom         : 5px;
+    left           : 110px ;
+    margin-left    : $albumMargin;
+    letter-spacing : 2px;
 }
 
 .album-page__photo-cred {
-  margin-right: $albumMargin;
-  float: right;
+    float        : right;
+    margin-right : $albumMargin;
 }
 
 .gallery__header {
-  width: 100%;
-  border-bottom: 2px solid #000;
-  margin-bottom: -2px;
-  padding: 35px 0 25px;
+    width         : 100%;
+    margin-bottom : -2px;
+    padding       : 35px 0 25px;
+    border-bottom : 2px solid #000;
 }
 
 .gallery__title {
-  @extend %max-width;
-  text-align: center;
-  font-size: 38rem;
-  line-height: 1;
+    @extend %max-width;
+    text-align  : center;
+    font-size   : 38rem;
+    line-height : 1;
 }
 
 .gallery__details {
-  @extend %max-width;
-  line-height: 1;
+    @extend %max-width;
+    line-height : 1;
 }
 
 .gallery__ind-link {
-  margin-left: 10px;
+    margin-left : 10px;
 }
 
 .gallery__photo-cred {
-  float: right;
-  margin-right: 13px;
+    float        : right;
+    margin-right : 13px;
 }
