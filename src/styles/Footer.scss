@@ -35,15 +35,25 @@ footer {
 
 
 .gallery__footer-next {
-  padding          : 50px 0;
+  padding          : 80px 0;
+  transition       : background-color .33s;
   text-align       : center;
-  background-color : $footerRed;
+  background-color : $gold;
 }
-
 
 .gallery__footer-link {
   text-transform : uppercase;
   color          : #fff;
   font-size      : 28rem;
   font-weight    : $fontWeightBold;
+
+  &:hover  {
+    .gallery__footer-next {
+      background-color : $footerRed;
+    }
+  }
+}
+
+.slightly-bigger {
+  font-size: 120%;
 }
