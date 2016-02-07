@@ -16,16 +16,21 @@ class PhotoGallery extends React.Component {
 
     return (
       <div className="page" >
-        <Header>
-          <h3>{title}</h3>
+        <Header tag="gallery__header">
+          <h3 className="gallery__title brandon">{title}</h3>
+          <div className="gallery__details">
+            <p className="gallery__ind-link"><Link to='/'>&lt;&lt; index</Link></p>
+            <p className="gallery__photo-cred">{count} photos by <a href="http://lovemedophotography.com" target="_blank">Love Me Do</a></p>
+          </div>
         </Header>
-        <Link to='/'>Back</Link>
-        <p>Count: {count}</p>
+
         <section className="gallery">
           <Gallery className="gallery" photos={photos} />
         </section>
         <Footer>
-          <Link to={`/album/${nextAlbum}`} >next</Link>
+          <div className="gallery__footer-next clearfix">
+            <Link className="gallery__footer-link brandon" to={`/album/${nextAlbum}`} >next album: {albumData[nextAlbum].title} &#8611;</Link>
+          </div>
 
         </Footer>
       </div>

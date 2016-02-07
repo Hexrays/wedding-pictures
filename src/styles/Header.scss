@@ -1,6 +1,25 @@
 @import 'constants';
 @import 'hex';
 
+header {
+  text-transform: uppercase;
+
+  p {
+    display: inline-block;
+    font-size: 13rem;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.header__photo-cred {
+
+}
+
 .album-page__header {
   @include flex-center-parent;
   position: relative;
@@ -12,7 +31,6 @@
 
 .album-page__header-copy {
   @include flex-center-child;
-  text-transform: uppercase;
   padding: 15px 40px;
   background-color: #fff;
   border: 5px solid #000;
@@ -41,20 +59,37 @@
   right: 0;
   bottom: 5px;
   letter-spacing: 2px;
-
-  p {
-    display: inline;
-    font-size: 13rem;
-  }
 }
 
 .album-page__photo-cred {
   margin-right: $albumMargin;
   float: right;
+}
 
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+.gallery__header {
+  width: 100%;
+  border-bottom: 2px solid #000;
+  margin-bottom: -2px;
+  padding: 35px 0 25px;
+}
+
+.gallery__title {
+  @extend %max-width;
+  text-align: center;
+  font-size: 38rem;
+  line-height: 1;
+}
+
+.gallery__details {
+  @extend %max-width;
+  line-height: 1;
+}
+
+.gallery__ind-link {
+  margin-left: 10px;
+}
+
+.gallery__photo-cred {
+  float: right;
+  margin-right: 13px;
 }
