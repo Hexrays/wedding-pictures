@@ -17,7 +17,7 @@ class PhotoGallery extends React.Component {
 
   render() {
     const {title, count, photos, number} = find(albumData, (obj) => {return obj.id === this.props.params.albumId});
-    let nextAlbumNumber = number === (albumData.length) ? 0 : number + 1;
+    let nextAlbumNumber = number === (albumData.length) ? 0 : number;
     let nextAlbum = albumData[nextAlbumNumber];
 
     return (

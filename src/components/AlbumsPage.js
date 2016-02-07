@@ -16,7 +16,7 @@ const AlbumsPage = () => (
         <h3 className="album-page__name brandon">J + K</h3>
         <div className="album-page__details">
           <p className="album-page__date">October 3, 2015</p>
-          <p className="album__photo-cred">Photos by <a href="http://lovemedophotography.com" target="_blank">Love Me Do</a></p>
+          <p className="album-page__photo-cred">Photos by <a href="http://lovemedophotography.com" target="_blank">Love Me Do</a></p>
         </div>
       </div>
     </Header>
