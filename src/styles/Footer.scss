@@ -1,3 +1,35 @@
+@import 'constants';
+@import 'hex';
+
 footer {
     text-align: center;
+    margin-top: 20px;
+}
+
+.hex-footer {
+  @include flex-center-parent;
+  width: 100%;
+  height: 120px;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.hex-message {
+  @include flex-center-child;
+  font-size: 14rem;
+  letter-spacing: 2px;
+}
+
+.hex-heart {
+  position: relative;
+  display: inline-block;
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background: url('../images/heart.png') center center no-repeat;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
 }

@@ -10,7 +10,7 @@ class PhotoGallery extends React.Component {
   render() {
     const {title, count, photos} = albumData[this.props.params.albumId];
     return (
-      <div  >
+      <div className="page" >
         <Link to='/'>Back</Link>
         <h3>{title}</h3>
         <p>Count: {count}</p>

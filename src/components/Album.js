@@ -2,13 +2,14 @@ import React from 'react';
 import {Link} from 'react-router';
 
 const Album = ({
-    id, title, count, folder
+    id, title, count, folder, desc
 }) => (
   <li className="album">
       <Link to={`album/${id}`} >
-          <h4>{title}</h4>
-        <p>Count: {count}</p>
-        <img src={`${folder}/001.jpg`} />
+        <img className="album__thumbnail" src={`${folder}/001.jpg`} />
+        <h4 className="album__title brandon">{title}</h4>
+        <p className="album__count">{count}</p>
+        <div className="album__hover"><p className="album__desc brandon">{desc}</p></div>
       </Link>
   </li>
 );

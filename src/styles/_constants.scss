@@ -7,3 +7,12 @@ $monoFontSizeSm: 8rem;
 $jkhover: 88, 76, 68;
 $gold: #a47c53;
 $creamBg: #FBF9F7;
+$orange:#FF6600;
+$albumMargin: 2.66666666%;
+
+%max-width {
+  width: 98%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}

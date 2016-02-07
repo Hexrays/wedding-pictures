@@ -1,20 +1,60 @@
 @import 'constants';
 @import 'hex';
 
-.album-list__header {
+.album-page__header {
   @include flex-center-parent;
   position: relative;
   width: 100%;
-  height: 315px;
+  height: 275px;
   background: $creamBg url('../images/header.jpg') center center no-repeat;
   background-size: cover;
 }
 
-.album-list__header-copy {
+.album-page__header-copy {
   @include flex-center-child;
   text-transform: uppercase;
   padding: 15px 40px;
   background-color: #fff;
   border: 5px solid #000;
   font-size: 16rem;
+}
+
+.album-page__title {
+  @extend %max-width;
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.album-page__name {
+  margin-left: $albumMargin;
+  font-size: 42rem;
+  display: inline-block;
+  line-height: 1;
+  width: 100px;
+}
+
+.album-page__details {
+  position: absolute;
+  left: 110px ;
+  margin-left: $albumMargin;
+  right: 0;
+  bottom: 5px;
+  letter-spacing: 2px;
+
+  p {
+    display: inline;
+    font-size: 13rem;
+  }
+}
+
+.album-page__photo-cred {
+  margin-right: $albumMargin;
+  float: right;
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

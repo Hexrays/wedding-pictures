@@ -4,6 +4,7 @@ export const albumData = [
         title: 'Getting Ready',
         count: 66,
         folder: 'images/01',
+        desc: 'Rain',
         photos: [
           {src: 'images/01/001.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'images/01/001.jpg'}},
           {src: 'images/01/002.jpg', width: 800, height: 1200, aspectRatio:0.6667, lightboxImage:{src:'images/01/002.jpg'}},
@@ -76,6 +77,7 @@ export const albumData = [
         title: 'Pre-Ceremony Portraits',
         count: 35,
         folder: 'images/02',
+        desc: 'Wet',
         photos: [
           {src: '/images/02/001.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'/images/02/001.jpg'}},
           {src: '/images/02/002.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'/images/02/002.jpg'}},
@@ -117,6 +119,7 @@ export const albumData = [
         title: 'Ceremony',
         count: 92,
         folder: 'images/03',
+        desc: 'Windy',
         photos: [
           {src: 'images/03/001.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'images/03/001.jpg'}},
           {src: 'images/03/002.jpg', width: 800, height: 1200, aspectRatio:0.6667, lightboxImage:{src:'images/03/002.jpg'}},
@@ -215,6 +218,7 @@ export const albumData = [
         title: 'Portraits',
         count: 89,
         folder: 'images/04',
+        desc: 'Cold',
         photos: [
           {src: 'images/04/001.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'images/04/001.jpg'}},
           {src: 'images/04/002.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'images/04/002.jpg'}},
@@ -310,6 +314,7 @@ export const albumData = [
         title: 'Reception',
         count: 82,
         folder: 'images/05',
+        desc: 'Party',
         photos: [
           {src: 'images/05/001.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'images/05/001.jpg'}},
           {src: 'images/05/002.jpg', width: 1200, height: 800, aspectRatio:1.50, lightboxImage:{src:'images/05/002.jpg'}},

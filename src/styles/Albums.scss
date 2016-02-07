@@ -1,12 +1,64 @@
+@import 'constants';
+@import 'hex';
+
+.album-list {
+  @extend %max-width;
+}
+
 .albums {
-    max-width: 600px;
-    margin: 0 auto;
-    border: 1px solid lime;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .album {
-    width: 48%;
-    float: left;
-    border: 5px solid #000;
-    margin: 1%;
+  position: relative;
+  width: 28%;
+  float: left;
+  border-bottom: 5px solid #000;
+  margin: $albumMargin;
+  overflow: hidden;
+
+  &:hover {
+    .album__hover {
+      transform: translateY(0);
+    }
+  }
+}
+
+.album__hover {
+  @include flex-center-parent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($orange,0.5);
+  transform: translateY(100%);
+  transition: transform 0.33s;
+}
+
+.album__desc {
+  @include flex-center-child;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: $fontWeightBold;
+  font-size: 42rem;
+  letter-spacing: 3px;
+}
+
+.album__thumbnail {
+  margin-bottom: 15px;
+}
+
+.album__title {
+  text-transform: uppercase;
+  float: left;
+  font-size: 14rem;
+  margin-bottom: 6px;
+  font-weight: $fontWeightBold;
+}
+
+.album__count {
+  font-size: 12rem;
+  float: right;
 }
