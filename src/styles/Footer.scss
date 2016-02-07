@@ -2,7 +2,7 @@
 @import 'hex';
 
 footer {
-  margin-top : 20px;
+  margin-top : -2px;
 }
 
 .hex-footer {
@@ -21,17 +21,17 @@ footer {
 }
 
 .hex-heart {
-  position       : relative;
-  display        : inline-block;
-  width          : 15px;
-  height         : 15px;
-  vertical-align : middle;
-  color          : transparent;
-  border         : 0;
-  background     : url('../images/heart.png') center center no-repeat;
-  background-size: contain;
-  text-shadow    : none;
-  font           : 0/0 a;
+  position        : relative;
+  display         : inline-block;
+  width           : 15px;
+  height          : 15px;
+  vertical-align  : middle;
+  color           : transparent;
+  border          : 0;
+  background      : url('../images/heart.png') center center no-repeat;
+  background-size : contain;
+  text-shadow     : none;
+  font            : 0/0 a;
 }
 
 
