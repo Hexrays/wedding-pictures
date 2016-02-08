@@ -31,7 +31,7 @@ class PhotoGallery extends React.Component {
         </Header>
 
         <section className="gallery">
-          <Gallery className="gallery" photos={photos} />
+          <Gallery className="gallery" photos={photos} key={this.props.params.albumId} />
         </section>
         <Footer>
           <Link className="gallery__footer-link brandon" to={`/album/${nextAlbum.id}`} >
