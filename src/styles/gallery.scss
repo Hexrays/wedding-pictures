@@ -1,6 +1,29 @@
 @import 'constants';
 @import 'hex';
 
-.gallery {
+.gallery__container {
   @extend %max-width;
+  position: relative;
+  background-color: #fff;
+}
+
+
+.example-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+  position: absolute;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+}
+
+.example-leave {
+  position: absolute;
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.1;
 }

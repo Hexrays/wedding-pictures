@@ -2,6 +2,7 @@ export const albumData = [
     {
         id: 'getting-ready',
         number: 1,
+        next: 'pre-ceremony-portraits',
         title: 'Getting Ready',
         count: 66,
         folder: 'images/01',
@@ -76,6 +77,7 @@ export const albumData = [
     },{
         id: 'pre-ceremony-portraits',
         number: 2,
+        next: 'ceremony',
         title: 'Pre-Ceremony Portraits',
         count: 35,
         folder: 'images/02',
@@ -119,6 +121,7 @@ export const albumData = [
     },{
         id: 'ceremony',
         number: 3,
+        next: 'portraits',
         title: 'Ceremony',
         count: 92,
         folder: 'images/03',
@@ -219,6 +222,7 @@ export const albumData = [
     },{
         id: 'portraits',
         number: 4,
+        next: 'reception',
         title: 'Portraits',
         count: 89,
         folder: 'images/04',
@@ -316,6 +320,7 @@ export const albumData = [
     },{
         id: 'reception',
         number : 5,
+        next: 'getting-ready',
         title: 'Reception',
         count: 82,
         folder: 'images/05',
