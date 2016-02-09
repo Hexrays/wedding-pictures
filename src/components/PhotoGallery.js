@@ -15,6 +15,12 @@ class PhotoGallery extends React.Component {
     console.log('Update');
   }
 
+  renderGallery(photos) {
+    return(
+        <Gallery className="gallery" photos={photos} key={this.props.params.albumId} />
+    );
+  }
+
   render() {
     const {title, count, photos, number} = find(albumData, (obj) => {return obj.id === this.props.params.albumId});
     let nextAlbumNumber = number === (albumData.length) ? 0 : number;
@@ -31,7 +37,7 @@ class PhotoGallery extends React.Component {
         </Header>
 
         <section className="gallery">
-          <Gallery className="gallery" photos={photos} key={this.props.params.albumId} />
+          {this.renderGallery(photos)}
         </section>
         <Footer>
           <Link className="gallery__footer-link brandon" to={`/album/${nextAlbum.id}`} >
