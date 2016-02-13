@@ -138,11 +138,17 @@ header {
   bottom      : $galleryHeaderPadding;
   line-height : 1;
 
+  @include breakpoint(lg){
+    position: relative;
+    bottom: auto;
+    margin-top: 10px;
+  }
+
   @include breakpoint(mb) {
     width      : 80%;
-    position   : relative;
-    bottom     : auto;
-    margin-top : 10px;
+    // position   : relative;
+    // bottom     : auto;
+    // margin-top : 10px;
     text-align : center;
   }
 }
