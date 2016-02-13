@@ -3,4 +3,9 @@
 
 .gallery {
   @extend %max-width;
+  margin-top: -2px;
+
+  @include breakpoint(mb) {
+    width: 80%;
+  }
 }

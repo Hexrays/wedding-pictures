@@ -29,9 +29,9 @@ class PhotoGallery extends React.Component {
       <div className="page" >
         <Header tag="gallery__header">
           <h3 className="gallery__title brandon">{title}</h3>
-          <div className="gallery__details">
+          <div className="gallery__details clearfix">
             <p className="gallery__ind-link"><Link to='/'>&lt;&lt; index</Link></p>
-            <p className="gallery__photo-cred">{count} photos by <a href="http://lovemedophotography.com" target="_blank">Love Me Do</a></p>
+            <p className="gallery__photo-cred"> <span className="show-mb-inline">||</span> {count} photos by <a href="http://lovemedophotography.com" target="_blank">Love Me Do</a></p>
           </div>
         </Header>
 

@@ -79,3 +79,11 @@ img {
   position : relative;
   width    : 100%;
 }
+
+.show-mb-inline {
+  display: none;
+
+  @include breakpoint(mb){
+    display: inline-block;
+  }
+}

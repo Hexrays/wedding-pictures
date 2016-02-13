@@ -93,6 +93,7 @@ header {
     left          : auto;
     margin-bottom : 15px;
     margin-left   : 0;
+    margin-top    : 8px;
     text-align    : center;
   }
 }
@@ -104,15 +105,19 @@ header {
   @include breakpoint(mb) {
     float        : none;
     margin-right : 0;
+    margin-top   : 6px;
   }
-
 }
 
 .gallery__header {
+  position      : relative;
   width         : 100%;
-  margin-bottom : -2px;
-  padding       : 35px 0 25px;
+  padding       : 35px 0 $galleryHeaderPadding;
   border-bottom : 1px solid #000;
+
+  @include breakpoint(mb) {
+    padding: 30px 0 20px;
+  }
 }
 
 .gallery__title {
@@ -120,18 +125,48 @@ header {
   text-align  : center;
   font-size   : 38rem;
   line-height : 0.8;
+
+  @include breakpoint(mb) {
+    font-size   : 32rem;
+    line-height : 1;
+  }
 }
 
 .gallery__details {
   @extend %max-width;
+  position    : absolute;
+  bottom      : $galleryHeaderPadding;
   line-height : 1;
+
+  @include breakpoint(mb) {
+    width      : 80%;
+    position   : relative;
+    bottom     : auto;
+    margin-top : 10px;
+    text-align : center;
+  }
 }
 
 .gallery__ind-link {
+  float       : left;
   margin-left : 10px;
 }
 
 .gallery__photo-cred {
   float        : right;
   margin-right : 13px;
+
+  .show-mb-inline {
+    position    : relative;
+    bottom      : 1px;
+    margin-left : 5px;
+  }
+}
+
+.gallery__photo-cred, .gallery__ind-link {
+  @include breakpoint(mb) {
+    float      : none;
+    text-align : center;
+    display    : inline-block;
+  }
 }
