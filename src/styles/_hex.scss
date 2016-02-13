@@ -144,7 +144,7 @@
 // Note: 568 px is iphone 5 landscape
 $BREAKPOINT-XSMALL : 35.5em  !default;  // 35.5em;   = 568px
 $BREAKPOINT-SMALL  : 44em    !default;  // 40em;     = 640px
-$BREAKPOINT-MEDIUM : 50em    !default;  // 50em;     = 800px
+$BREAKPOINT-MEDIUM : 767px   !default;  // Phone and smaller
 $BREAKPOINT-LARGE  : 64em    !default;  // 64em;     = 1024px
 $BREAKPOINT-XLARGE : 82.5em  !default;  // 82.5em;   = 1320px
 $BREAKPOINT-FULL   : 63.75em !default;  // 63.75em;  = 1020px
@@ -154,7 +154,7 @@ $BREAKPOINT-FULL   : 63.75em !default;  // 63.75em;  = 1020px
         @media only screen and (#{$minmax}-width: $BREAKPOINT-XSMALL) { @content; }
     } @else if $point == sm {
         @media only screen and (#{$minmax}-width: $BREAKPOINT-SMALL)  { @content; }
-    } @else if $point == md {
+    } @else if $point == mb {
         @media only screen and (#{$minmax}-width: $BREAKPOINT-MEDIUM) { @content; }
     } @else if $point == lg {
         @media only screen and (#{$minmax}-width: $BREAKPOINT-LARGE)  { @content; }
@@ -188,7 +188,7 @@ $BREAKPOINT-FULL   : 63.75em !default;  // 63.75em;  = 1020px
         @media only screen and (orientation : $orientation) and (#{$minmax}-width: $BREAKPOINT-XSMALL) { @content; }
     } @else if $point == sm {
         @media only screen and (orientation : $orientation) and (#{$minmax}-width: $BREAKPOINT-SMALL)  { @content; }
-    } @else if $point == md {
+    } @else if $point == mb {
         @media only screen and (orientation : $orientation) and (#{$minmax}-width: $BREAKPOINT-MEDIUM) { @content; }
     } @else if $point == lg {
         @media only screen and (orientation : $orientation) and (#{$minmax}-width: $BREAKPOINT-LARGE)  { @content; }

@@ -1,9 +1,18 @@
 @import 'constants';
 @import 'hex';
 
-.album-list {
+.album-list-container {
   @extend %max-width;
   margin-bottom: 20px;
+
+  @include breakpoint(mb) {
+    @extend %max-width-mobile;
+  }
+}
+
+.album-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .albums {
@@ -23,6 +32,11 @@
     .album__hover {
       transform: translateY(0);
     }
+  }
+
+  @include breakpoint(mb) {
+    width: 100%;
+    margin: 0 auto 30px;
   }
 }
 
@@ -58,6 +72,7 @@
   text-transform : uppercase;
   font-size      : 14rem;
   font-weight    : $fontWeightBold;
+  line-height    : 1;
 }
 
 .album__count {

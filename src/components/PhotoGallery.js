@@ -12,7 +12,6 @@ import {albumData} from '../constants/constants';
 class PhotoGallery extends React.Component {
   componentDidUpdate() {
     window.scrollTo(0,0);
-    console.log('Update');
   }
 
   renderGallery(photos) {
