@@ -1,4 +1,4 @@
-require('styles/gallery.scss');
+require('styles/Gallery.scss');
 
 import React from 'react';
 import {find} from 'lodash';

@@ -23,6 +23,7 @@
   "keywords": [],
   "author": "Your name here",
   "devDependencies": {
+    "autoprefixer": "^6.3.3",
     "babel-core": "^6.0.0",
     "babel-eslint": "^5.0.0-beta4",
     "babel-loader": "^6.0.0",

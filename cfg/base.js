@@ -37,11 +37,6 @@ module.exports = {
     }
   },
   module: {
-    preLoaders: [{
-        test: /\.(js|jsx)$/,
-        include: srcPath,
-        loader: 'eslint-loader'
-      }],
     loaders: [
       {
         test: /\.css$/,
@@ -56,20 +51,16 @@ module.exports = {
         loader: 'style-loader!css-loader!postcss-loader!sass-loader?outputStyle=expanded'
       },
       {
-        test: /\.less/,
-        loader: 'style-loader!css-loader!postcss-loader!less-loader'
-      },
-      {
-        test: /\.styl/,
-        loader: 'style-loader!css-loader!postcss-loader!stylus-loader'
-      },
-      {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)$/,
         loader: 'url-loader?limit=8192'
       }
     ]
   },
   postcss: function () {
-    return [];
+    return [
+      require('autoprefixer')({
+        browsers: ['last 2 versions', 'ie >= 8']
+      })
+    ];
   }
 };
