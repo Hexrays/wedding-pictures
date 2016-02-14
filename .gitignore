@@ -35,3 +35,6 @@ src/images/02
 src/images/03
 src/images/04
 src/images/05
+
+# Build
+dist/
