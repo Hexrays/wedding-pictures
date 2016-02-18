@@ -10,7 +10,14 @@ To be added to jeffkatie.co/pics
 * ~~Add ability to click on images and view large~~ solved with [react-photo-gallery](https://github.com/neptunian/react-photo-gallery)
 * ~~Design/Style pages~~
 * ~~Refactor/rename components to make the section names more consistent~~
-* look into this `Uncaught Invariant Violation: findDOMNode was called on an unmounted component.`
+* ~~look into this `Uncaught Invariant Violation: findDOMNode was called on an unmounted component.`~~
 * Try
-  * Change PhotoGallery to PhotoGalleryPage
-  * Break out PhotoGallery to it's own component
+  * ~~Change PhotoGallery to PhotoGalleryPage~~
+  * ~~Break out PhotoGallery to it's own component~~
+* Update photo gallery
+* update photo edit
+  * resize
+  * rename
+  * redo json
+  * host
+  * direct link
