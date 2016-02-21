@@ -5,11 +5,9 @@ import App from './components/App';
 import AlbumsPage from './components/AlbumsPage';
 import PhotoGallery from './components/PhotoGallery';
 
-// const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
-
 const Root = () => (
 
-    <Router history={createHistory()}>
+    <Router history={createHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={AlbumsPage}/>
             <Route path="/album/:albumId" component={PhotoGallery} />
