@@ -7,12 +7,14 @@ import PhotoGallery from './components/PhotoGallery';
 
 const Root = () => (
 
-    <Router history={createHistory}>
-        <Route path="/" component={App}>
+    <Router history={createHistory()}>
+        <Route path="/pics/" component={App}>
             <IndexRoute component={AlbumsPage}/>
             <Route path="/album/:albumId" component={PhotoGallery} />
-            <Redirect from="album/:albumId" to="/album/:albumId" />
+            <Redirect from="album/:albumId" to="/pics/album/:albumId" />
         </Route>
+        <Redirect from="/" to="/pics/" />
+
     </Router>
 );
 
