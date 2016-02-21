@@ -14,6 +14,7 @@ const Root = () => (
             <Redirect from="album/:albumId" to="/pics/album/:albumId" />
         </Route>
         <Redirect from="/" to="/pics/" />
+        <Redirect from="/pics" to="/pics/" />
 
     </Router>
 );
