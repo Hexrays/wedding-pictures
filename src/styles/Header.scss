@@ -137,11 +137,15 @@ header {
   position    : absolute;
   bottom      : $galleryHeaderPadding;
   line-height : 1;
+  left: 50%;
+  transform: translateX(-50%);
 
   @include breakpoint(lg){
     position   : relative;
     bottom     : auto;
     margin-top : 10px;
+    left: 0;
+    transform: translateX(0);
   }
 
   @include breakpoint(mb) {

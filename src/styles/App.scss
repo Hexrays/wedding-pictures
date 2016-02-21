@@ -10,6 +10,7 @@
 
 body, html {
   font-size : 1px;
+  min-height: 100vh;
 }
 
 body {
@@ -78,6 +79,8 @@ img {
 .page {
   position : relative;
   width    : 100%;
+  min-height: 100vh;
+  padding-bottom: $footerHeight;
 }
 
 .show-mb-inline {
@@ -86,4 +89,13 @@ img {
   @include breakpoint(mb){
     display: inline-block;
   }
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.jk {
+  width: 100%;
+  text-align: center;
 }
