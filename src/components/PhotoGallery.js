@@ -38,14 +38,12 @@ class PhotoGallery extends React.Component {
         <section className="gallery">
           {this.renderGallery(photos)}
         </section>
-        <Footer>
           <Link className="gallery__footer-link brandon" to={`/album/${nextAlbum.id}`} >
             <div className="gallery__footer-next clearfix">
               next album: {nextAlbum.title} <span className="slightly-bigger">&#8611;</span>
             </div>
           </Link>
-
-        </Footer>
+        <Footer/>
       </div>
     );
   }
