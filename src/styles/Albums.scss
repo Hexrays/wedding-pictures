@@ -26,7 +26,7 @@
   overflow      : hidden;
   width         : 28%;
   margin        : $albumMargin;
-  border-bottom : 5px solid #000;
+  border-bottom : 3px solid #000;
 
   &:hover {
     .album__hover {
@@ -58,8 +58,12 @@
   letter-spacing : 3px;
   text-transform : uppercase;
   color          : #fff;
-  font-size      : 42rem;
-  font-weight    : $fontWeightBold;
+  font-size      : 36rem;
+  font-weight    : $fontWeightBlack;
+
+  @include breakpoint(mb){
+    font-size: 28rem;
+  }
 }
 
 .album__thumbnail {
@@ -70,12 +74,12 @@
   float          : left;
   margin-bottom  : 6px;
   text-transform : uppercase;
-  font-size      : 14rem;
+  font-size      : 12rem;
   font-weight    : $fontWeightBold;
   line-height    : 1;
 }
 
 .album__count {
   float     : right;
-  font-size : 12rem;
+  font-size : 10rem;
 }
