@@ -14,10 +14,10 @@ To be added to jeffkatie.co/pics
 * Try
   * ~~Change PhotoGallery to PhotoGalleryPage~~
   * ~~Break out PhotoGallery to it's own component~~
-* Update photo gallery
-* update photo edit
-  * resize
-  * rename
-  * redo json
-  * host
-  * direct link
+* ~~Update photo gallery~~
+* ~~update photo edit~~
+  * ~~resize~~
+  * ~~rename~~
+  * ~~redo json~~
+  * ~~host~~
+  * ~~direct link~~
