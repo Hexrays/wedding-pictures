@@ -137,7 +137,7 @@ export const albumData = [
     },{
         id: 'pre-ceremony-portraits',
         number: 2,
-        title: 'Pre-Ceremony Portraits',
+        title: 'Pre-Ceremony',
         count: 37,
         thumbnail: 'http://jeffkatie.co/pics/images/covers/cover_02.jpg',
         desc: 'Wet',

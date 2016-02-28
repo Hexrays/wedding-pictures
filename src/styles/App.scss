@@ -16,7 +16,7 @@ body, html {
 body {
   font-family : $monospaceFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color       : #000;
-  font-size   : 16rem;
+  font-size   : 10rem;
 
   @include breakpoint(mb) {
     font-size: 14rem;
@@ -54,7 +54,7 @@ body {
 
 %brandon {
     font-family    : $headerFont;
-    letter-spacing : 1.5px;
+    letter-spacing : 1px;
 }
 
 .brandon {

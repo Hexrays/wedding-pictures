@@ -20,14 +20,14 @@ footer {
 .hex-message {
   @include flex-center-child;
   letter-spacing : 2px;
-  font-size      : 12rem;
+  font-size      : 10rem;
 }
 
 .hex-heart {
   position        : relative;
   display         : inline-block;
-  width           : 15px;
-  height          : 15px;
+  width           : 12px;
+  height          : 12px;
   vertical-align  : middle;
   color           : transparent;
   border          : 0;
@@ -44,6 +44,10 @@ footer {
   transition       : background-color .33s;
   text-align       : center;
   background-color : $gold;
+
+  @include breakpoint(mb){
+    padding: 40px 0;
+  }
 }
 
 .gallery__footer-link {
@@ -52,6 +56,11 @@ footer {
   font-size      : 28rem;
   font-weight    : $fontWeightBold;
   outline        : 0;
+
+  @include breakpoint(mb){
+    font-size: 24rem;
+    line-height: 1;
+  }
 
   &:hover  {
     .gallery__footer-next {
