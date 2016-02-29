@@ -1,7 +1,7 @@
 require('styles/Gallery.scss');
 
 import React from 'react';
-import {find, debounce} from 'lodash';
+import {find, debounce, clone} from 'lodash';
 import Gallery from './Gallery';
 import {Link} from 'react-router';
 import Header from './Header';
@@ -29,6 +29,10 @@ class PhotoGallery extends React.Component {
     this.loadPhotos(this.props.params.albumId);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll, false);
+  }
+
   handleScroll(){
     if ( !this.state.allLoaded && (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 600)) {
       this.loadMore();
@@ -49,7 +53,7 @@ class PhotoGallery extends React.Component {
 
   loadPhotos(albumId) {
     const {title, count, photos, number} = find(albumData, (obj) => {return obj.id === albumId});
-    let remainPhotos = photos;
+    let remainPhotos = clone(photos);
     let nextBatch = remainPhotos.splice(0, MAX_IMAGES_PER_LOAD);
     let nextAlbumNumber = number === (albumData.length) ? 0 : number;
     let nextAlbum = albumData[nextAlbumNumber];
@@ -71,7 +75,7 @@ class PhotoGallery extends React.Component {
   loadMore() {
     let remainPhotos = this.state.remainingPhotos;
     let nextBatch = remainPhotos.splice(0, MAX_IMAGES_PER_LOAD);
-console.log('MORE');
+
     this.setState({
       remainingPhotos : remainPhotos,
       livePhotos      : this.state.livePhotos.concat(nextBatch),
