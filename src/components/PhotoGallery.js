@@ -103,11 +103,15 @@ console.log('MORE');
         <section className="gallery">
           {this.renderGallery(livePhotos, albumId)}
         </section>
+
+        <section className="gallery__next">
           <Link className="gallery__footer-link brandon" onClick={this.onNextClick.bind(this)} to={`/album/${nextAlbum.id}`} >
             <div className="gallery__footer-next clearfix">
               next album: {nextAlbum.title} <span className="slightly-bigger">&#8611;</span>
             </div>
           </Link>
+        </section>
+
         <Footer/>
       </div>
     );
