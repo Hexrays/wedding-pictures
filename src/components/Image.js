@@ -20,9 +20,13 @@ class Image extends React.Component{
     var imgSrc = imgTag.getAttribute('src');
     // You may want to rename the component if the <Image> definition
     // overrides window.Image
-    var img = new window.Image();
-    img.onload = () => {this.onImageLoad()};
-    img.src = imgSrc;
+    this.img = new window.Image();
+    this.img.onload = () => {this.onImageLoad()};
+    this.img.src = imgSrc;
+  }
+
+  componentWillUnmount() {
+    this.img.onload = null;
   }
 
   render () {
