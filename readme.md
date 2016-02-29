@@ -21,3 +21,7 @@ To be added to jeffkatie.co/pics
   * ~~redo json~~
   * ~~host~~
   * ~~direct link~~
+* ~~load on scroll~~
+* ~~gallery image preload~~
+* fix immediate loadMore
+* add oncomplete to photo gallery to prevent immediate loadMore
