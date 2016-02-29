@@ -2,7 +2,7 @@ require('styles/Gallery.scss');
 
 import React from 'react';
 import {find, debounce} from 'lodash';
-import Gallery from 'react-photo-gallery';
+import Gallery from './Gallery';
 import {Link} from 'react-router';
 import Header from './Header';
 import Footer from './Footer';
@@ -17,7 +17,6 @@ class PhotoGallery extends React.Component {
       currentImage    : 0,
       remainingPhotos : [],
       livePhotos      : [],
-      number          : 0,
       count           : 0,
       title           : 'Gallery'
     }
@@ -27,43 +26,45 @@ class PhotoGallery extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    this.loadPhotos();
+    this.loadPhotos(this.props.params.albumId);
   }
 
   handleScroll(){
     if ( !this.state.allLoaded && (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 600)) {
-console.log('bottom');
       this.loadMore();
     }
   }
 
-  componentWillReceiveProps() {
-    console.log('WRP', this.props.params.albumId !== this.state.albumId);
-    if(this.props.albumId !== this.state.albumId) {
-      this.loadPhotos();
-    }
+  onNextClick() {
+    let nextAlbum = this.state.nextAlbum.id;
+    this.setState({
+      currentImage    : 0,
+      remainingPhotos : [],
+      livePhotos      : [],
+      count           : 0,
+      title           : 'Gallery'
+    });
+    this.loadPhotos(nextAlbum);
   }
 
-  componentDidUpdate() {
-console.log('update');
-
-  }
-
-  loadPhotos() {
-    const {title, count, photos, number} = find(albumData, (obj) => {return obj.id === this.props.params.albumId});
+  loadPhotos(albumId) {
+    const {title, count, photos, number} = find(albumData, (obj) => {return obj.id === albumId});
     let remainPhotos = photos;
     let nextBatch = remainPhotos.splice(0, MAX_IMAGES_PER_LOAD);
+    let nextAlbumNumber = number === (albumData.length) ? 0 : number;
+    let nextAlbum = albumData[nextAlbumNumber];
+
     window.scrollTo(0,0);
-console.log('loadPhotos', title);
+
     this.setState({
       currentImage    : 0,
       remainingPhotos : remainPhotos,
       livePhotos      : nextBatch,
-      number          : number,
       count           : count,
       title           : title,
       allLoaded       : remainPhotos.length === 0 ? true : false,
-      albumId         : this.props.params.albumId
+      albumId         : albumId,
+      nextAlbum       : nextAlbum
     });
   }
 
@@ -85,10 +86,10 @@ console.log('MORE');
   }
 
   render() {
-    const {title, count, livePhotos, number} = this.state;
-    let nextAlbumNumber = number === (albumData.length) ? 0 : number;
-    let nextAlbum = albumData[nextAlbumNumber];
-// console.log(photos);
+    const {title, count, livePhotos, albumId, nextAlbum} = this.state;
+    if(!livePhotos.length) {
+      return (<div className="loading">Loading Gallery...</div>);
+    }
     return (
       <div className="page" >
         <Header tag="gallery__header">
@@ -100,9 +101,9 @@ console.log('MORE');
         </Header>
 
         <section className="gallery">
-          {this.renderGallery(livePhotos)}
+          {this.renderGallery(livePhotos, albumId)}
         </section>
-          <Link className="gallery__footer-link brandon" to={`/pics/album/${nextAlbum.id}`} >
+          <Link className="gallery__footer-link brandon" onClick={this.onNextClick.bind(this)} to={`/album/${nextAlbum.id}`} >
             <div className="gallery__footer-next clearfix">
               next album: {nextAlbum.title} <span className="slightly-bigger">&#8611;</span>
             </div>
