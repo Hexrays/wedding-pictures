@@ -5,7 +5,51 @@
   @extend %max-width;
   margin-top: -2px;
 
+  img {
+    transition: all 0.33s;
+  }
+
   @include breakpoint(mb) {
     width: 80%;
   }
+}
+
+.gallery__next {
+  position: relative;
+  margin-top: -4px;
+}
+
+.gallery__footer-next {
+  display          : block;
+  padding          : 80px 0;
+  transition       : background-color .33s;
+  text-align       : center;
+  background-color : $gold;
+
+  @include breakpoint(mb){
+    padding: 40px 0;
+  }
+}
+
+.gallery__footer-link {
+  text-transform : uppercase;
+  color          : #fff;
+  font-size      : 28rem;
+  font-weight    : $fontWeightBold;
+  outline        : 0;
+
+  @include breakpoint(mb){
+    font-size: 24rem;
+    line-height: 1;
+  }
+
+  &:hover  {
+    .gallery__footer-next {
+      background-color : $footerRed;
+    }
+  }
+}
+
+.slightly-bigger {
+  font-size: 120%;
 }

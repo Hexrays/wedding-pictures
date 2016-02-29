@@ -32,7 +32,7 @@ class Image extends React.Component{
   render () {
     var { ...props } = this.props;
     // var {height, width} = this.state;
-    var style = this.state.loaded ? {opacity:1, transition: 'opacity 0.25s'} : {opacity:0, transition: 'opacity 0.25s'}
+    var style = this.state.loaded ? {opacity:1} : {opacity:0, transition: 'opacity 0.25s'}
     return (
       <img ref="img" {...props} style={style} />
     );
