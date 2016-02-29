@@ -98,7 +98,6 @@ class Gallery extends React.Component{
                 );
             }
         }
-        console.log(this.props.photos.length, photoPreviewNodes.length);
         return(
             <div id="Gallery" className="clearfix">
                 {photoPreviewNodes}
