@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import classNames from 'classnames';
 
 class Image extends React.Component{
 
@@ -27,13 +26,11 @@ class Image extends React.Component{
   }
 
   render () {
-    var { className, ...props } = this.props;
+    var { ...props } = this.props;
     // var {height, width} = this.state;
-    var rootClassName = classNames(className, 'image', {
-      'image-loaded': this.state.loaded
-    });
+    var style = this.state.loaded ? {opacity:1, transition: 'opacity 0.25s'} : {opacity:0, transition: 'opacity 0.25s'}
     return (
-      <img ref="img" {...props} className={rootClassName} />
+      <img ref="img" {...props} style={style} />
     );
   }
 }
