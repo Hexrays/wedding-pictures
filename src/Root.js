@@ -14,8 +14,6 @@ const Root = () => (
             <Route path="/album/:albumId" component={PhotoGallery} />
             <Redirect from="album/:albumId" to="/pics/album/:albumId" />
         </Route>
-
-
     </Router>
 );
 
