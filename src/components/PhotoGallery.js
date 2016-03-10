@@ -53,33 +53,33 @@ class PhotoGallery extends React.Component {
 
   loadPhotos(albumId) {
     const {title, count, photos, number} = find(albumData, (obj) => {return obj.id === albumId});
-    let remainPhotos = clone(photos);
-    let nextBatch = remainPhotos.splice(0, MAX_IMAGES_PER_LOAD);
+    let remainingPhotos = clone(photos);
+    let nextBatch       = remainingPhotos.splice(0, MAX_IMAGES_PER_LOAD);
     let nextAlbumNumber = number === (albumData.length) ? 0 : number;
-    let nextAlbum = albumData[nextAlbumNumber];
+    let nextAlbum       = albumData[nextAlbumNumber];
 
     window.scrollTo(0,0);
 
     this.setState({
       currentImage    : 0,
-      remainingPhotos : remainPhotos,
+      remainingPhotos : remainingPhotos,
       livePhotos      : nextBatch,
       count           : count,
       title           : title,
-      allLoaded       : remainPhotos.length === 0 ? true : false,
+      allLoaded       : remainingPhotos.length === 0 ? true : false,
       albumId         : albumId,
       nextAlbum       : nextAlbum
     });
   }
 
   loadMore() {
-    let remainPhotos = this.state.remainingPhotos;
-    let nextBatch = remainPhotos.splice(0, MAX_IMAGES_PER_LOAD);
+    let remainingPhotos = this.state.remainingPhotos;
+    let nextBatch       = remainingPhotos.splice(0, MAX_IMAGES_PER_LOAD);
 
     this.setState({
-      remainingPhotos : remainPhotos,
+      remainingPhotos : remainingPhotos,
       livePhotos      : this.state.livePhotos.concat(nextBatch),
-      allLoaded       : remainPhotos.length === 0 ? true : false
+      allLoaded       : remainingPhotos.length === 0 ? true : false
     });
   }
 
@@ -89,8 +89,26 @@ class PhotoGallery extends React.Component {
     );
   }
 
+  renderLoader(remainingPhotos, nextAlbum) {
+    if(!remainingPhotos.length) {
+      return(
+        <Link className="gallery__footer-link brandon" onClick={this.onNextClick.bind(this)} to={`/album/${nextAlbum.id}`} >
+          <div className="gallery__footer-next clearfix">
+            next album: {nextAlbum.title} <span className="slightly-bigger">&#8611;</span>
+          </div>
+        </Link>
+      );
+    } else {
+      return (
+        <div className="gallery__footer-link brandon is-loading">
+          <div className="gallery__footer-next clearfix">Loading...</div>
+        </div>
+      )
+    }
+  }
+
   render() {
-    const {title, count, livePhotos, albumId, nextAlbum} = this.state;
+    const {title, count, livePhotos, albumId, nextAlbum, remainingPhotos} = this.state;
     if(!livePhotos.length) {
       return (<div className="loading">Loading Gallery...</div>);
     }
@@ -109,11 +127,8 @@ class PhotoGallery extends React.Component {
         </section>
 
         <section className="gallery__next">
-          <Link className="gallery__footer-link brandon" onClick={this.onNextClick.bind(this)} to={`/album/${nextAlbum.id}`} >
-            <div className="gallery__footer-next clearfix">
-              next album: {nextAlbum.title} <span className="slightly-bigger">&#8611;</span>
-            </div>
-          </Link>
+          {this.renderLoader(remainingPhotos, nextAlbum)}
+
         </section>
 
         <Footer/>
